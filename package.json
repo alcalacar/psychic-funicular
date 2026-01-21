@@ -1,0 +1,27 @@
+{
+	"devDependencies": {
+		"@badeball/cypress-cucumber-preprocessor": "^20.0.1",
+		"@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+		"cypress": "^13.6.4"
+	},
+	"name": "inteligo-cypress-template",
+	"version": "1.1.0",
+	"description": "Framework para Automatizaciones Inteligo",
+	"main": "cypress.config.js",
+	"scripts": {
+		"test": "cypress open",
+		"jira:export": "node xray-export-cucumber.js",
+		"local:test": "cypress run --no-runner-ui --browser edge --spec cypress\\e2e\\features\\*.feature",
+		"jira:test": "cypress run --no-runner-ui --browser edge --spec cypress\\e2e\\features\\Jira\\*.feature",
+		"jira:report": "node xray-results-import.js",
+		"cypress:clean": "node xray-clean-repo.js",
+		"jira:execute": "npm run cypress:clean && npm run jira:export && (npm run jira:test || true) && npm run jira:report && npm run cypress:clean"
+	},
+	"keywords": [
+		"cypress",
+		"test",
+		"inteligo"
+	],
+	"author": "Carlos Alcala Cisneros @alcalacar",
+	"license": ""
+}

@@ -1,0 +1,22 @@
+{
+	"fields": {
+		"project": { "key": "$projectId" },
+		"assignee": { "id": "$assigneeId" },
+		"summary": "$issueTitle $datetime",
+		"issuetype": { "name": "$issueTypeId" },
+		"components": [{ "name": "$componentId" }],
+		"description": "Ejecucion de pruebas creada de manera automática por el Framework de Automatizacion."
+	},
+	"update": {
+		"issuelinks": [
+			{
+				"add": {
+					"type": { "name": "Test" },
+					"outwardIssue": { "key": "$testJiraKey" }
+				}
+			}
+		]
+	},
+	"xrayFields": { "testPlanKey": "$testPlanKey" },
+	"transition": { "id": "$transitionDoneId" }
+}

@@ -1,0 +1,13 @@
+node_modules
+reports
+jsonlogs
+cypress/screenshots
+cypress/videos
+*.png
+*.jpg
+*.mp4
+cypress.env.json
+xray-jira-auth.json
+package-lock.json
+jira-issue-fields.json
+cypress/e2e/features/Jira
